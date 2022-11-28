@@ -8,8 +8,8 @@ function Header() {
       <Container>
         <Navbar.Brand>
           <img src={icon} className="d-inline-block align-top" height="30" alt="" />{' '}
-          <span className="fw-bold text-primary">Coulsdon Community</span>
-          </Navbar.Brand>
+          <span className="fw-bold text-primary">Coulsdon Community <small className="fw-regular text-dark">Partnership</small></span>
+        </Navbar.Brand>
       </Container>
     </Navbar>
   );
