@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container, Navbar } from 'react-bootstrap';
-import icon from './../icon.svg';
+import { Container, Image, Navbar } from 'react-bootstrap';
+import icon from './../icon-white.svg';
 
 function Header() {
   return (
-    <Navbar variant="light">
+    <Navbar variant="dark" bg="primary" sticky="top" as="header">
       <Container>
         <Navbar.Brand>
-          <img src={icon} className="d-inline-block align-top" height="30" alt="" />{' '}
-          <span className="fw-bold text-primary">Coulsdon Community <small className="fw-normal text-dark">Partnership</small></span>
+          <Image className="d-inline-block align-top" src={icon} height="30" />{' '}
+          <span className="fw-bold">Coulsdon Community Partnership</span>
         </Navbar.Brand>
       </Container>
     </Navbar>

@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
 @import "@smolpack/bootstrap-extensions/scss/functions";
+@import "pantone-css/scss/pantone";
 
-$primary: #5FBFBF;
-$dark:    #7C7C7C;
+$primary: $pantone-p-76-16-c;
 
-$font-family-sans-serif: 'Ubuntu', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: 'Nunito', sans-serif;
 
 @import "@smolpack/bootstrap-extensions/scss/variables";
 @import "@smolpack/bootstrap-extensions/scss/bootstrap-extensions";
+
+.page {
+  margin-top: $spacer;
+  margin-bottom: $spacer;
+}
