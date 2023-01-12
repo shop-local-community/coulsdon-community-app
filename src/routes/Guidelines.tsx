@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Spinner } from '../components';
 
 function Guidelines() {
   return (
@@ -33,7 +34,9 @@ function Guidelines() {
           </Nav>
         </Col>
         <Col xs={12} md={10}>
-          <Outlet />
+          <React.Suspense fallback={<Spinner />}>
+            <Outlet />
+          </React.Suspense>
         </Col>
       </Row>
     </Container>

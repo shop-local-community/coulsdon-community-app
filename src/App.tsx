@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import { Image } from 'react-bootstrap';
+import { Header, Spinner } from './components';
 import './App.scss';
 
 const Home = React.lazy(() => import('./routes/Home'));
@@ -16,7 +17,7 @@ function App() {
     <>
       <Header />
       <Router>
-        <React.Suspense fallback={<div>Loading&hellip;</div>}>
+        <React.Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/guidelines" element={<Guidelines />}>
