@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoulsdon_community_app=self.webpackChunkcoulsdon_community_app||[]).push([[443],{8443:function(e,n,s){s.r(n);s(2791);var c=s(184);n.default=function(){return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)("h2",{children:"Fonts"}),(0,c.jsx)("p",{className:"lead text-muted",children:"Nunito"}),(0,c.jsx)("div",{className:"display-1",children:"The quick brown fox jumps over the lazy dog."})]})}}}]);
+//# sourceMappingURL=443.4b176c0c.chunk.js.map
