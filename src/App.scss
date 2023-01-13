@@ -12,6 +12,17 @@ $spinner-border-width: 0;
 @import "@smolpack/bootstrap-extensions/scss/variables";
 @import "@smolpack/bootstrap-extensions/scss/bootstrap-extensions";
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 .bi,
 .icon {
   fill: currentColor;

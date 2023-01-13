@@ -4,7 +4,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 function Footer() {
   return (
-    <footer className="text-bg-primary">
+    <footer className="text-bg-primary mt-auto">
       <Container>
         <Nav>
           <Nav.Item>
