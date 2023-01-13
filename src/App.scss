@@ -12,6 +12,11 @@ $spinner-border-width: 0;
 @import "@smolpack/bootstrap-extensions/scss/variables";
 @import "@smolpack/bootstrap-extensions/scss/bootstrap-extensions";
 
+.bi,
+.icon {
+  fill: currentColor;
+}
+
 .page {
   margin-top: $spacer;
   margin-bottom: $spacer;
