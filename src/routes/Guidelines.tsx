@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { Col, Container, Nav, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Placeholder, Row } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Spinner } from '../components';
 
@@ -34,7 +34,14 @@ function Guidelines() {
           </Nav>
         </Col>
         <Col xs={12} md={10}>
-          <React.Suspense fallback={<Spinner />}>
+          <React.Suspense fallback={(
+            <>
+              <Placeholder as="h1" animation="wave">
+                <Placeholder xs={2} />
+              </Placeholder>
+              <Spinner />
+            </>
+          )}>
             <Outlet />
           </React.Suspense>
         </Col>
