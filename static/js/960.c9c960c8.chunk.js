@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoulsdon_community_app=self.webpackChunkcoulsdon_community_app||[]).push([[960],{6960:function(n,s,a){a.r(s);a(2791);var c=a(184);s.default=function(){return(0,c.jsxs)("p",{className:"display-1",children:["The roadmap to a ",(0,c.jsx)("strong",{children:"strong partnership."})]})}}}]);
+//# sourceMappingURL=960.c9c960c8.chunk.js.map
