@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoulsdon_community_app=self.webpackChunkcoulsdon_community_app||[]).push([[428],{2428:function(c,o,s){s(2791);o.Z=s.p+"static/media/logo.5581142f38bb23fbed4cf3a2e5d1dc0c.svg"}}]);
+//# sourceMappingURL=428.ca7093bf.chunk.js.map
