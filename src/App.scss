@@ -5,11 +5,34 @@
 
 $primary: $pantone-p-76-16-c;
 
+$primary-100: tint-color($primary, 80%);
+$primary-200: tint-color($primary, 60%);
+$primary-300: tint-color($primary, 40%);
+$primary-400: tint-color($primary, 20%);
+$primary-500: $primary;
+$primary-600: shade-color($primary, 20%);
+$primary-700: shade-color($primary, 40%);
+$primary-800: shade-color($primary, 60%);
+$primary-900: shade-color($primary, 80%);
+
 $font-family-sans-serif: 'Nunito', sans-serif;
 
 $spinner-border-width: 0;
 
 @import "@smolpack/bootstrap-extensions/scss/variables";
+
+$primarys: (
+  "100": $primary-100,
+  "200": $primary-200,
+  "300": $primary-300,
+  "400": $primary-400,
+  "500": $primary-500,
+  "600": $primary-600,
+  "700": $primary-700,
+  "800": $primary-800,
+  "900": $primary-900
+);
+
 @import "@smolpack/bootstrap-extensions/scss/bootstrap-extensions";
 
 html,
@@ -21,6 +44,12 @@ body,
 #root {
   display: flex;
   flex-direction: column;
+}
+
+:root {
+  @each $color, $value in $primarys {
+    --#{$prefix}primary-#{$color}: #{$value};
+  }
 }
 
 .bi,
