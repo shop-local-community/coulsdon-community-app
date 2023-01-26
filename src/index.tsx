@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import axios from 'axios';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { appLoader } from './App';
 import { eventsLoader } from './routes/Events';
+import { Spinner } from './components';
 
 const App = React.lazy(() => import('./App'));
 const Home = React.lazy(() => import('./routes/Home'));
@@ -16,10 +19,14 @@ const GuidelinesIcon = React.lazy(() => import('./routes/GuidelinesIcon'));
 const GuidelinesFonts = React.lazy(() => import('./routes/GuidelinesFonts'));
 const GuidelinesColors = React.lazy(() => import('./routes/GuidelinesColors'));
 
+axios.defaults.baseURL = 'https://strapi.coulsdonpartnership.org/api';
+
 const router = createBrowserRouter([
   {
     path: '/',
+    id: 'app',
     element: <App />,
+    loader: appLoader,
     children: [
       {
         index: true,
@@ -65,7 +72,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <React.Suspense fallback={<Spinner />}>
+      <RouterProvider router={router} />
+    </React.Suspense>
   </React.StrictMode>
 );
 
