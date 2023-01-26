@@ -1,14 +1,20 @@
 import React from 'react';
-import logo from './../logo.svg';
-import { Image } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { useRouteLoaderData } from 'react-router-dom';
 import { Seo } from '../components';
+import { AppLoaderData } from '../App';
 
 function Home() {
+  const { preferences: { data: preferencesData } } = useRouteLoaderData('app') as AppLoaderData;
+
   return (
-    <>
+    <Container className="page">
       <Seo />
-      <Image src={logo} alt="Coulsdon Community Partnership" fluid />
-    </>
+      <h1>Mission Statement</h1>
+      {preferencesData.attributes.missionStatement.split('\n').map(p => (
+        <p className="lead">{p}</p>
+      ))}
+    </Container>
   );
 }
 
