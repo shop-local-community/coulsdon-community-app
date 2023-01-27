@@ -5,6 +5,14 @@ export type EventListResponse = {
 export type EventListResponseDataItem = {
   id: number,
   attributes: {
-    title: string
+    title: string,
+    cover: {
+      data: {
+        attributes: {
+          alternativeText: string,
+          url: string
+        }
+      }
+    }
   }
 }
