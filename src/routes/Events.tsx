@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import axios from 'axios';
 import { Seo } from '../components';
 import { EventListResponse } from '../schemas';
@@ -10,7 +9,7 @@ export type EventsLoaderData = EventListResponse;
 
 export async function eventsLoader(): Promise<EventsLoaderData> {
   try {
-    const response = await axios.get<EventListResponse>('/events?populate=*');
+    const response = await axios.get<EventListResponse>('/events?sort=start&populate=*');
     return response.data;
   } catch (error) {
     throw error;
@@ -30,6 +29,7 @@ function Events() {
           {eventsData.map(event => (
             <Col key={event.id}>
               <Card border="light">
+                <Link to={`/events/${event.attributes.slug}`} className="stretched-link" />
                 <Card.Img src={event.attributes.cover.data.attributes.url} alt={event.attributes.cover.data.attributes.alternativeText} />
               </Card>
             </Col>
