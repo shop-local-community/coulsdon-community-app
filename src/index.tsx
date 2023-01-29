@@ -6,11 +6,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { appLoader } from './App';
 import { eventsLoader } from './routes/Events';
+import { eventLoader } from './routes/Event';
 import { Spinner } from './components';
 
 const App = React.lazy(() => import('./App'));
 const Home = React.lazy(() => import('./routes/Home'));
 const Events = React.lazy(() => import('./routes/Events'));
+const Event = React.lazy(() => import('./routes/Event'));
 const Guidelines = React.lazy(() => import('./routes/Guidelines'));
 
 const GuidelinesIndex = React.lazy(() => import('./routes/GuidelinesIndex'));
@@ -35,7 +37,12 @@ const router = createBrowserRouter([
       {
         path: 'events',
         element: <Events />,
-        loader: eventsLoader
+        loader: eventsLoader,
+      },
+      {
+        path: 'events/:slug',
+        element: <Event />,
+        loader: eventLoader
       },
       {
         path: 'guidelines',
