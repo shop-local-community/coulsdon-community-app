@@ -52,6 +52,15 @@ body,
   }
 }
 
+h1 {
+  text-align: center;
+
+  > img {
+    max-height: map-get($display-font-sizes, 1) * $display-line-height * 3;
+    max-width: 100%;
+  }
+}
+
 .bi,
 .icon {
   fill: currentColor;
