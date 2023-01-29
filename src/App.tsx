@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import axios from 'axios';
 import { Footer, Header } from './components';
 import { PreferenceResponse } from './schemas';
@@ -21,8 +21,6 @@ export async function appLoader(): Promise<AppLoaderData> {
 }
 
 function App() {
-  const { preferences } = useLoaderData() as AppLoaderData;
-
   return (
     <>
       <Header />
