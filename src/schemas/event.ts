@@ -21,12 +21,7 @@ export type EventResponse = {
   data: EventResponseDataObject
 }
 
-export type EventResponseDataObject = Event & {
-  attributes: {
-    start: string,
-    end: string
-  }
-};
+export type EventResponseDataObject = Event;
 
 export type EventListResponse = {
   data: EventListResponseDataItem[]
