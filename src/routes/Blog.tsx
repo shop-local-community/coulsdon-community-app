@@ -1,15 +1,16 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 import axios from 'axios';
 import { Seo } from '../components';
-import { EventListResponse } from '../schemas';
+import { ArticleListResponse } from '../schemas';
 
-export type BlogLoaderData = EventListResponse;
+export type BlogLoaderData = ArticleListResponse;
 
 export async function blogLoader(): Promise<BlogLoaderData> {
   try {
-    const response = await axios.get<EventListResponse>('/articles?populate=*');
+    const response = await axios.get<ArticleListResponse>('/articles?populate=*');
     return response.data;
   } catch (error) {
     throw error;
@@ -22,7 +23,33 @@ function Blog() {
   return (
     <Container className="page">
       <Seo title="Blog" />
-      <h1>Blog</h1>
+      <Row className="g-3">
+        {blogData.map((article, index) => {
+          const publishedAtDate = new Date(article.attributes.publishedAt);
+
+          return (
+            <Col key={article.id} xs={12}>
+              <Card border="light">
+                <Card.Img variant="top" src={article.attributes.image.data.attributes.url} alt={article.attributes.image.data.attributes.alternativeText} />
+                <Card.Body>
+                  <Card.Title>{article.attributes.title}</Card.Title>
+                  <Card.Text>{article.attributes.seo.metaDescription}</Card.Text>
+                  <div className="d-flex justify-content-between mt-auto">
+                    <LinkContainer to={`/blog/${article.attributes.slug}`}>
+                      <Button className="stretched-link" variant="outline-secondary" size="sm">View</Button>
+                    </LinkContainer>
+                    <small className="text-muted">{publishedAtDate.toLocaleDateString(undefined, {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric'
+                    })}</small>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
     </Container>
   );
 }
