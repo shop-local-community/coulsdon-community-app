@@ -12,6 +12,7 @@ import { eventLoader } from "./routes/Event";
 import { Spinner } from "./components";
 
 const App = React.lazy(() => import("./App"));
+const Error = React.lazy(() => import("./Error"));
 // const Home = React.lazy(() => import("./routes/Home"));
 const Blog = React.lazy(() => import("./routes/Blog"));
 const Article = React.lazy(() => import("./routes/Article"));
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
     path: "/",
     id: "app",
     element: <App />,
+    errorElement: <Error />,
     loader: appLoader,
     children: [
       {
