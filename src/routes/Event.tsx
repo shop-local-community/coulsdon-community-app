@@ -27,34 +27,53 @@ function Event() {
   const startDate = new Date(eventData.attributes.start);
   const endDate = new Date(eventData.attributes.end);
 
+  let style: React.CSSProperties = {
+    backgroundColor: 'var(--bs-body-bg)',
+    color: 'var(--bs-body-color)'
+  };
+
+  if (eventData.attributes.theme) {
+    if (eventData.attributes.theme.bodyBg) style = {
+      ...style,
+      '--bs-body-bg': eventData.attributes.theme.bodyBg
+    } as React.CSSProperties;
+
+    if (eventData.attributes.theme.bodyColor) style = {
+      ...style,
+      '--bs-body-color': eventData.attributes.theme.bodyColor
+    } as React.CSSProperties;
+  }
+
   return (
-    <Container className="page">
-      <Seo title="Events" description="Check out the events we are planning for this year." />
-      <h1>
-        {eventData.attributes.logo.data ? (
-          <Image src={eventData.attributes.logo.data.attributes.url} alt={eventData.attributes.logo.data.attributes.alternativeText} />
-        ) : eventData.attributes.title}
-      </h1>
-      <p className="lead text-center">Starts on {startDate.toLocaleDateString(undefined, {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-      })} from {startDate.toLocaleTimeString(undefined, {
-        hour: 'numeric',
-        hour12: true
-      })} to {endDate.toLocaleTimeString(undefined, {
-        hour: 'numeric',
-        hour12: true,
-        timeZoneName: 'short'
-      })}.</p>
-      {eventData.attributes.description.split('\n').map(p => (
-        <p className="lead">{p}</p>
-      ))}
-      {eventData.attributes.eventbriteEventId && eventbrite && (
-        <div id={eventbrite.id} />
-      )}
-    </Container>
+    <div style={style as React.CSSProperties}>
+      <Container className="page">
+        <Seo title={eventData.attributes.seo.metaTitle} description={eventData.attributes.seo.metaDescription} />
+        <h1>
+          {eventData.attributes.logo.data ? (
+            <Image src={eventData.attributes.logo.data.attributes.url} alt={eventData.attributes.logo.data.attributes.alternativeText} />
+          ) : eventData.attributes.title}
+        </h1>
+        <p className="lead text-center">Starts on {startDate.toLocaleDateString(undefined, {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        })} from {startDate.toLocaleTimeString(undefined, {
+          hour: 'numeric',
+          hour12: true
+        })} to {endDate.toLocaleTimeString(undefined, {
+          hour: 'numeric',
+          hour12: true,
+          timeZoneName: 'short'
+        })}.</p>
+        {eventData.attributes.description.split('\n').map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+        {eventData.attributes.eventbriteEventId && eventbrite && (
+          <div id={eventbrite.id} />
+        )}
+      </Container>
+    </div>
   );
 }
 

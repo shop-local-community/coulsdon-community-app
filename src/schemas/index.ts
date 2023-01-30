@@ -1,6 +1,5 @@
 import { EventResponse, EventResponseDataObject, EventListResponse, EventListResponseDataItem } from './event';
 import { PreferenceResponse, PreferenceResponseDataObject } from './preference';
-import { SharedSeoComponent } from './shared';
 
 export type {
   EventResponse,
@@ -8,6 +7,5 @@ export type {
   EventListResponse,
   EventListResponseDataItem,
   PreferenceResponse,
-  PreferenceResponseDataObject,
-  SharedSeoComponent
+  PreferenceResponseDataObject
 }

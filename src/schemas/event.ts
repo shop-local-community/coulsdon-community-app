@@ -1,4 +1,6 @@
+import { Theme } from "react-styleguidist"
 import { Media, RequiredMedia } from "./media"
+import { SharedSeo, SharedTheme } from "./shared"
 
 type Event = {
   id: number,
@@ -9,6 +11,8 @@ type Event = {
     logo: Media,
     start: string,
     end: string,
+    theme: SharedTheme,
+    seo: SharedSeo,
     slug: string,
     eventbriteEventId?: string
   }
