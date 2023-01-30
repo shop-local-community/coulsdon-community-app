@@ -1,19 +1,21 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import axios from 'axios';
-import { Footer, Header } from './components';
-import { PreferenceResponse } from './schemas';
-import './App.scss';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import axios from "axios";
+import { Footer, Header } from "./components";
+import { PreferenceResponse } from "./schemas";
+import "./App.scss";
 
 export type AppLoaderData = {
-  preferences: PreferenceResponse
+  preferences: PreferenceResponse;
 };
 
 export async function appLoader(): Promise<AppLoaderData> {
   try {
-    const response = await axios.get<PreferenceResponse>('/preference?populate=*');
+    const response = await axios.get<PreferenceResponse>(
+      "/preference?populate=*"
+    );
     return {
-      preferences: response.data
+      preferences: response.data,
     };
   } catch (error) {
     throw error;

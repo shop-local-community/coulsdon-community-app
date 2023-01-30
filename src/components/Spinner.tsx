@@ -1,6 +1,6 @@
-import React from 'react';
-import { Image, Spinner as BSSpinner } from 'react-bootstrap';
-import spinner from './../spinner.svg';
+import React from "react";
+import { Image, Spinner as BSSpinner } from "react-bootstrap";
+import spinner from "./../spinner.svg";
 
 function Spinner() {
   return (

@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './../logo.svg';
-import { Image } from 'react-bootstrap';
+import React from "react";
+import logo from "./../logo.svg";
+import { Image } from "react-bootstrap";
 
 function Guidelines() {
   return (

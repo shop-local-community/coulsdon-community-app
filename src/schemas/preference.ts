@@ -1,13 +1,13 @@
-import { SocialURL } from "./shared"
+import { SocialURL } from "./shared";
 
 export type PreferenceResponse = {
-  data: PreferenceResponseDataObject
-}
+  data: PreferenceResponseDataObject;
+};
 
 export type PreferenceResponseDataObject = {
-  id: number,
+  id: number;
   attributes: {
-    missionStatement: string,
-    socialURLs: SocialURL[]
-  }
-}
+    missionStatement: string;
+    socialURLs: SocialURL[];
+  };
+};

@@ -1,16 +1,18 @@
-import React from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { useLoaderData } from 'react-router-dom';
-import axios from 'axios';
-import { Seo } from '../components';
-import { ArticleListResponse } from '../schemas';
+import React from "react";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { useLoaderData } from "react-router-dom";
+import axios from "axios";
+import { Seo } from "../components";
+import { ArticleListResponse } from "../schemas";
 
 export type BlogLoaderData = ArticleListResponse;
 
 export async function blogLoader(): Promise<BlogLoaderData> {
   try {
-    const response = await axios.get<ArticleListResponse>('/articles?populate=*');
+    const response = await axios.get<ArticleListResponse>(
+      "/articles?populate=*"
+    );
     return response.data;
   } catch (error) {
     throw error;
@@ -30,19 +32,33 @@ function Blog() {
           return (
             <Col key={article.id} xs={12}>
               <Card border="light">
-                <Card.Img variant="top" src={article.attributes.image.data.attributes.url} alt={article.attributes.image.data.attributes.alternativeText} />
+                <Card.Img
+                  variant="top"
+                  src={article.attributes.image.data.attributes.url}
+                  alt={article.attributes.image.data.attributes.alternativeText}
+                />
                 <Card.Body>
                   <Card.Title>{article.attributes.title}</Card.Title>
-                  <Card.Text>{article.attributes.seo.metaDescription}</Card.Text>
+                  <Card.Text>
+                    {article.attributes.seo.metaDescription}
+                  </Card.Text>
                   <div className="d-flex justify-content-between mt-auto">
                     <LinkContainer to={`/blog/${article.attributes.slug}`}>
-                      <Button className="stretched-link" variant="outline-secondary" size="sm">View</Button>
+                      <Button
+                        className="stretched-link"
+                        variant="outline-secondary"
+                        size="sm"
+                      >
+                        View
+                      </Button>
                     </LinkContainer>
-                    <small className="text-muted">{publishedAtDate.toLocaleDateString(undefined, {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
-                    })}</small>
+                    <small className="text-muted">
+                      {publishedAtDate.toLocaleDateString(undefined, {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </small>
                   </div>
                 </Card.Body>
               </Card>

@@ -1,6 +1,16 @@
-import { ArticleResponse, ArticleResponseDataObject, ArticleListResponse, ArticleListResponseDataItem } from './article';
-import { EventResponse, EventResponseDataObject, EventListResponse, EventListResponseDataItem } from './event';
-import { PreferenceResponse, PreferenceResponseDataObject } from './preference';
+import {
+  ArticleResponse,
+  ArticleResponseDataObject,
+  ArticleListResponse,
+  ArticleListResponseDataItem,
+} from "./article";
+import {
+  EventResponse,
+  EventResponseDataObject,
+  EventListResponse,
+  EventListResponseDataItem,
+} from "./event";
+import { PreferenceResponse, PreferenceResponseDataObject } from "./preference";
 
 export type {
   ArticleResponse,
@@ -12,5 +22,5 @@ export type {
   EventListResponse,
   EventListResponseDataItem,
   PreferenceResponse,
-  PreferenceResponseDataObject
-}
+  PreferenceResponseDataObject,
+};

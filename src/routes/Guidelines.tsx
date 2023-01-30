@@ -1,13 +1,16 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { Col, Container, Nav, Placeholder, Row } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Seo, Spinner } from '../components';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Col, Container, Nav, Placeholder, Row } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { Seo, Spinner } from "../components";
 
 function Guidelines() {
   return (
     <Container className="page">
-      <Seo title="Guidelines" description="The roadmap to a strong partnership." />
+      <Seo
+        title="Guidelines"
+        description="The roadmap to a strong partnership."
+      />
       <h1>Guidelines</h1>
       <Row>
         <Col xs={12} md={2}>
@@ -35,14 +38,16 @@ function Guidelines() {
           </Nav>
         </Col>
         <Col xs={12} md={10}>
-          <React.Suspense fallback={(
-            <>
-              <Placeholder as="h1" animation="wave">
-                <Placeholder xs={2} />
-              </Placeholder>
-              <Spinner />
-            </>
-          )}>
+          <React.Suspense
+            fallback={
+              <>
+                <Placeholder as="h1" animation="wave">
+                  <Placeholder xs={2} />
+                </Placeholder>
+                <Spinner />
+              </>
+            }
+          >
             <Outlet />
           </React.Suspense>
         </Col>

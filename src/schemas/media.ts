@@ -1,14 +1,14 @@
 export type Media = {
-  data?: MediaData
+  data?: MediaData;
 };
 
 export type RequiredMedia = {
-  data: MediaData
-}
+  data: MediaData;
+};
 
 export type MediaData = {
   attributes: {
-    alternativeText: string,
-    url: string
-  }
-}
+    alternativeText: string;
+    url: string;
+  };
+};

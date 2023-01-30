@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asul:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @import "@smolpack/bootstrap-extensions/scss/functions";
 @import "pantone-css/scss/pantone";
@@ -18,7 +18,7 @@ $primary-700: shade-color($primary, 40%);
 $primary-800: shade-color($primary, 60%);
 $primary-900: shade-color($primary, 80%);
 
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: "Nunito", sans-serif;
 
 $spinner-border-width: 0;
 
@@ -33,7 +33,7 @@ $primarys: (
   "600": $primary-600,
   "700": $primary-700,
   "800": $primary-800,
-  "900": $primary-900
+  "900": $primary-900,
 );
 
 @import "@smolpack/bootstrap-extensions/scss/bootstrap-extensions";
