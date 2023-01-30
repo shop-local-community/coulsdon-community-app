@@ -11,8 +11,8 @@ function Home() {
     <Container className="page">
       <Seo />
       <h1>Mission Statement</h1>
-      {preferencesData.attributes.missionStatement.split('\n').map(p => (
-        <p className="lead">{p}</p>
+      {preferencesData.attributes.missionStatement.split('\n').map((p, i) => (
+        <p key={i} className="lead">{p}</p>
       ))}
     </Container>
   );
