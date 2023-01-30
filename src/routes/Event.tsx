@@ -48,6 +48,9 @@ function Event() {
         hour12: true,
         timeZoneName: 'short'
       })}.</p>
+      {eventData.attributes.description.split('\n').map(p => (
+        <p className="lead">{p}</p>
+      ))}
       {eventData.attributes.eventbriteEventId && eventbrite && (
         <div id={eventbrite.id} />
       )}

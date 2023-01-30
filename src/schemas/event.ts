@@ -5,6 +5,7 @@ type Event = {
   attributes: {
     title: string,
     cover: RequiredMedia,
+    description: string,
     logo: Media,
     start: string,
     end: string,
