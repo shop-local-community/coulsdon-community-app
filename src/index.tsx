@@ -12,12 +12,13 @@ import { eventLoader } from "./routes/Event";
 import { Spinner } from "./components";
 
 const App = React.lazy(() => import("./App"));
-const Home = React.lazy(() => import("./routes/Home"));
+// const Home = React.lazy(() => import("./routes/Home"));
 const Blog = React.lazy(() => import("./routes/Blog"));
 const Article = React.lazy(() => import("./routes/Article"));
 const Events = React.lazy(() => import("./routes/Events"));
 const Event = React.lazy(() => import("./routes/Event"));
 const Guidelines = React.lazy(() => import("./routes/Guidelines"));
+const MissionStatement = React.lazy(() => import("./routes/MissionStatement"));
 
 const GuidelinesIndex = React.lazy(() => import("./routes/GuidelinesIndex"));
 const GuidelinesLogo = React.lazy(() => import("./routes/GuidelinesLogo"));
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
             element: <GuidelinesColors />,
           },
         ],
+      },
+      {
+        path: "mission-statement",
+        element: <MissionStatement />
       },
     ],
   },

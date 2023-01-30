@@ -16,6 +16,11 @@ function Footer() {
       <Container>
         <Nav>
           <Nav.Item>
+            <LinkContainer to="/mission-statement">
+              <Nav.Link className="link-light">Mission statement</Nav.Link>
+            </LinkContainer>
+          </Nav.Item>
+          <Nav.Item>
             <LinkContainer to="/guidelines">
               <Nav.Link className="link-light">Guidelines</Nav.Link>
             </LinkContainer>
