@@ -25,7 +25,7 @@ function Events() {
       <h1>Events</h1>
       <p className="lead">Check out the events we are planning for this year, reserve your tickets for our ever popular Halloween Trick or Treat Trail, or help us to bring some Christmas cheer to town with our new event Coulsdon's Yuletide Magic.</p>
       {eventsData.length ? (
-        <Row xs={1} sm={2} md={3}>
+        <Row className="g-3" xs={1} sm={2} md={3}>
           {eventsData.map(event => (
             <Col key={event.id}>
               <Card border="light">
