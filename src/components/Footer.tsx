@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useRouteLoaderData } from 'react-router-dom';
 import { AppLoaderData } from '../App';
@@ -10,7 +10,7 @@ function Footer() {
   const { preferences: { data: preferencesData } } = useRouteLoaderData('app') as AppLoaderData;
 
   return (
-    <footer className="text-bg-primary mt-auto">
+    <Navbar className="mt-auto" variant="dark" bg="primary" as="footer">
       <Container>
         <Nav>
           <Nav.Item>
@@ -38,7 +38,7 @@ function Footer() {
           ))}
         </Nav>
       </Container>
-    </footer>
+    </Navbar>
   );
 }
 
