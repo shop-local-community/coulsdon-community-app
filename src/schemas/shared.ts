@@ -1,9 +1,10 @@
-export type SharedSeo = {
+export type Seo = {
   metaTitle: string,
   metaDescription: string
 }
 
-export type SharedTheme = {
+export type Theme = {
   bodyBg?: string,
-  bodyColor?: string
+  bodyColor?: string,
+  fontFamily?: string
 }

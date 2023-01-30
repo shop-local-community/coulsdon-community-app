@@ -29,7 +29,8 @@ function Event() {
 
   let style: React.CSSProperties = {
     backgroundColor: 'var(--bs-body-bg)',
-    color: 'var(--bs-body-color)'
+    color: 'var(--bs-body-color)',
+    fontFamily: 'var(--bs-body-font-family)'
   };
 
   if (eventData.attributes.theme) {
@@ -42,6 +43,29 @@ function Event() {
       ...style,
       '--bs-body-color': eventData.attributes.theme.bodyColor
     } as React.CSSProperties;
+
+    if (eventData.attributes.theme.fontFamily) {
+      switch (eventData.attributes.theme.fontFamily) {
+        case 'Asul':
+          style = {
+            ...style,
+            '--bs-body-font-family': `'${eventData.attributes.theme.fontFamily}', sans-serif`
+          } as React.CSSProperties;
+          break;
+        case 'Freckle Face':
+        case 'Mali':
+          style = {
+            ...style,
+            '--bs-body-font-family': `'${eventData.attributes.theme.fontFamily}', cursive`
+          } as React.CSSProperties;
+          break;
+        default:
+          style = {
+            ...style,
+            '--bs-body-font-family': `'${eventData.attributes.theme.fontFamily}'`
+          } as React.CSSProperties;
+      }
+    }
   }
 
   return (
