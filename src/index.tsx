@@ -5,12 +5,16 @@ import axios from 'axios';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { appLoader } from './App';
+import { blogLoader } from './routes/Blog';
+import { articleLoader } from './routes/Article';
 import { eventsLoader } from './routes/Events';
 import { eventLoader } from './routes/Event';
 import { Spinner } from './components';
 
 const App = React.lazy(() => import('./App'));
 const Home = React.lazy(() => import('./routes/Home'));
+const Blog = React.lazy(() => import('./routes/Blog'));
+const Article = React.lazy(() => import('./routes/Article'));
 const Events = React.lazy(() => import('./routes/Events'));
 const Event = React.lazy(() => import('./routes/Event'));
 const Guidelines = React.lazy(() => import('./routes/Guidelines'));
@@ -32,7 +36,13 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Blog />,
+        loader: blogLoader
+      },
+      {
+        path: 'blog/:slug',
+        element: <Article />,
+        loader: articleLoader
       },
       {
         path: 'events',
