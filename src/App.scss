@@ -40,8 +40,7 @@ $primarys: (
 
 html,
 body,
-#root,
-.theme {
+#root {
   height: 100%;
 }
 
@@ -52,6 +51,10 @@ body > img {
 #root {
   display: flex;
   flex-direction: column;
+}
+
+.theme {
+  flex: 1 1 auto;
 }
 
 :root {
