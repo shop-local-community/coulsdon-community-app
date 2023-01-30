@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 import axios from 'axios';
 import { Seo } from '../components';
 import { EventListResponse } from '../schemas';
@@ -26,14 +27,30 @@ function Events() {
       <p className="lead">Check out the events we are planning for this year, reserve your tickets for our ever popular Halloween Trick or Treat Trail, or help us to bring some Christmas cheer to town with our new event Coulsdon's Yuletide Magic.</p>
       {eventsData.length ? (
         <Row className="g-3" xs={1} sm={2} md={3}>
-          {eventsData.map(event => (
-            <Col key={event.id}>
-              <Card border="light">
-                <Link to={`/events/${event.attributes.slug}`} className="stretched-link" />
-                <Card.Img src={event.attributes.cover.data.attributes.url} alt={event.attributes.cover.data.attributes.alternativeText} />
-              </Card>
-            </Col>
-          ))}
+          {eventsData.map(event => {
+            const startDate = new Date(event.attributes.start);
+
+            return (
+              <Col key={event.id}>
+                <Card className="h-100" border="light">
+                  <Card.Img variant="top" src={event.attributes.cover.data.attributes.url} alt={event.attributes.cover.data.attributes.alternativeText} />
+                  <Card.Body>
+                    <Card.Text>{event.attributes.seo.metaDescription}</Card.Text>
+                    <div className="d-flex justify-content-between mt-auto">
+                      <LinkContainer to={`/events/${event.attributes.slug}`}>
+                        <Button className="stretched-link" variant="outline-secondary" size="sm">View</Button>
+                      </LinkContainer>
+                      <small className="text-muted">{startDate.toLocaleDateString(undefined, {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                      })}</small>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            );
+          })}
         </Row>
       ) : (
         <p>No events.</p>
