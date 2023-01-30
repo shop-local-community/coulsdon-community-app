@@ -11,7 +11,7 @@ export type AppLoaderData = {
 
 export async function appLoader(): Promise<AppLoaderData> {
   try {
-    const response = await axios.get<PreferenceResponse>('/preference');
+    const response = await axios.get<PreferenceResponse>('/preference?populate=*');
     return {
       preferences: response.data
     };
