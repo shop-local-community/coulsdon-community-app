@@ -8,7 +8,8 @@ type Event = {
     logo: Media,
     start: string,
     end: string,
-    slug: string
+    slug: string,
+    eventbriteEventId?: string
   }
 }
 
