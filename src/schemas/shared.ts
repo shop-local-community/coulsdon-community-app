@@ -3,6 +3,11 @@ export type Seo = {
   metaDescription: string
 }
 
+export type SocialURL = {
+  socialNetwork: string,
+  URL: string
+}
+
 export type Theme = {
   bodyBg?: string,
   bodyColor?: string,
