@@ -40,8 +40,13 @@ $primarys: (
 
 html,
 body,
-#root {
+#root,
+.theme {
   height: 100%;
+}
+
+body > img {
+  display: none;
 }
 
 #root {

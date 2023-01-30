@@ -69,7 +69,7 @@ function Event() {
   }
 
   return (
-    <div style={style as React.CSSProperties}>
+    <div className="theme" style={style as React.CSSProperties}>
       <Container className="page">
         <Seo title={eventData.attributes.seo.metaTitle} description={eventData.attributes.seo.metaDescription} />
         <h1>
