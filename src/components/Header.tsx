@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Image, Nav, Navbar, Offcanvas } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import logo from './../logo-white.svg';
 import { ReactComponent as EventsIcon } from './../icons/calendar-days-duotone.svg';
-import { LinkContainer } from 'react-router-bootstrap';
 
 function Header() {
   const breakpoint = 'lg';
