@@ -16,6 +16,9 @@ function Footer() {
       <Container>
         <Nav>
           <Nav.Item>
+            <Nav.Link className="link-light" as="span">Charity number: 1201996</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <LinkContainer to="/mission-statement">
               <Nav.Link className="link-light">Mission statement</Nav.Link>
             </LinkContainer>
