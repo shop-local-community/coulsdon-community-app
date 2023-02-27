@@ -11,7 +11,7 @@ export type BlogLoaderData = ArticleListResponse;
 export async function blogLoader(): Promise<BlogLoaderData> {
   try {
     const response = await axios.get<ArticleListResponse>(
-      "/articles?populate=*"
+      "/articles?populate=*&sort=publishedAt:desc"
     );
     return response.data;
   } catch (error) {
