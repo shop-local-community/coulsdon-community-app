@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { appLoader } from "./App";
 import { blogLoader } from "./routes/Blog";
 import { articleLoader } from "./routes/Article";
+import { businessesLoader } from "./routes/Businesses";
 import { eventsLoader } from "./routes/Events";
 import { eventLoader } from "./routes/Event";
 import { Spinner } from "./components";
@@ -16,6 +17,7 @@ const Error = React.lazy(() => import("./Error"));
 // const Home = React.lazy(() => import("./routes/Home"));
 const Blog = React.lazy(() => import("./routes/Blog"));
 const Article = React.lazy(() => import("./routes/Article"));
+const Businesses = React.lazy(() => import("./routes/Businesses"));
 const Events = React.lazy(() => import("./routes/Events"));
 const Event = React.lazy(() => import("./routes/Event"));
 const Guidelines = React.lazy(() => import("./routes/Guidelines"));
@@ -46,6 +48,11 @@ const router = createBrowserRouter([
         path: "blog/:slug",
         element: <Article />,
         loader: articleLoader,
+      },
+      {
+        path: "businesses",
+        element: <Businesses />,
+        loader: businessesLoader,
       },
       {
         path: "events",
