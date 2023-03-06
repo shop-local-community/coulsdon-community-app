@@ -20,6 +20,10 @@ $primary-900: shade-color($primary, 80%);
 
 $font-family-sans-serif: "Nunito", sans-serif;
 
+$nav-icon-link-border-width: 0;
+
+$offcanvas-vertical-height: auto;
+
 $spinner-border-width: 0;
 
 @import "@smolpack/bootstrap-extensions/scss/variables";
@@ -75,6 +79,10 @@ h1 {
 .bi,
 .icon {
   fill: currentColor;
+}
+
+.navbar-nav {
+  flex-direction: row;
 }
 
 .page {
