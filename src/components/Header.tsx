@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Image, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "./../logo-white.svg";
+import { ReactComponent as BuildingsIcon } from "./../icons/buildings-duotone.svg";
 import { ReactComponent as EventsIcon } from "./../icons/calendar-days-duotone.svg";
 
 function Header() {
@@ -34,12 +35,22 @@ function Header() {
         >
           <Offcanvas.Header closeButton />
           <Offcanvas.Body>
-            <Nav className="ms-auto" variant="icon-nav">
+            <Nav className="ms-auto justify-content-evenly" variant="icon-nav">
+              <Nav.Item>
+                <LinkContainer to="/businesses">
+                  <Nav.Link>
+                    <div className="icon">
+                      <BuildingsIcon height="24" />
+                    </div>
+                    <small className="nav-icon-nav-label">Businesses</small>
+                  </Nav.Link>
+                </LinkContainer>
+              </Nav.Item>
               <Nav.Item>
                 <LinkContainer to="/events">
                   <Nav.Link>
                     <div className="icon">
-                      <EventsIcon width="24" />
+                      <EventsIcon height="24" />
                     </div>
                     <small className="nav-icon-nav-label">Events</small>
                   </Nav.Link>
