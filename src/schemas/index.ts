@@ -5,6 +5,10 @@ import {
   ArticleListResponseDataItem,
 } from "./article";
 import {
+  BusinessListResponse,
+  BusinessListResponseDataItem,
+} from "./business";
+import {
   EventResponse,
   EventResponseDataObject,
   EventListResponse,
@@ -17,6 +21,8 @@ export type {
   ArticleResponseDataObject,
   ArticleListResponse,
   ArticleListResponseDataItem,
+  BusinessListResponse,
+  BusinessListResponseDataItem,
   EventResponse,
   EventResponseDataObject,
   EventListResponse,
