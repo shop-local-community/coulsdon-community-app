@@ -96,7 +96,8 @@ h1 {
   margin-bottom: $spacer;
 }
 
-.card-body {
+.card-body,
+.card-img-overlay {
   display: flex;
   flex-direction: column;
 }
