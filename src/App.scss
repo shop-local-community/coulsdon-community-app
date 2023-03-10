@@ -3,7 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "@smolpack/bootstrap-extensions/scss/functions";
+
+// 2. Include any default variable overrides here
 @import "pantone-css/scss/pantone";
 
 $primary: $pantone-p-76-16-c;
@@ -28,8 +31,10 @@ $offcanvas-vertical-height: auto;
 
 $spinner-border-width: 0;
 
+// 3. Include remainder of required Bootstrap stylesheets
 @import "@smolpack/bootstrap-extensions/scss/variables";
 
+// 4. Include any default map overrides here
 $primarys: (
   "100": $primary-100,
   "200": $primary-200,
@@ -42,8 +47,13 @@ $primarys: (
   "900": $primary-900,
 );
 
+// 5. Include remainder of required parts
 @import "@smolpack/bootstrap-extensions/scss/bootstrap-extensions";
 
+// 6. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// 7. Add additional custom code here
 html,
 body,
 #root {
@@ -98,6 +108,7 @@ h1 {
 
 .card-body,
 .card-img-overlay {
+  backdrop-filter: blur($spacer) brightness(120%);
   display: flex;
   flex-direction: column;
 }
