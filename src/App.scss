@@ -21,6 +21,8 @@ $primary-900: shade-color($primary, 80%);
 $font-family-sans-serif: "Nunito", sans-serif;
 
 $nav-icon-link-border-width: 0;
+$nav-icon-link-active-color: inherit;
+$nav-icon-link-active-bg:    inherit;
 
 $offcanvas-vertical-height: auto;
 
@@ -83,6 +85,10 @@ h1 {
 
 .navbar-nav {
   flex-direction: row;
+
+  .active {
+    font-weight: bolder;
+  }
 }
 
 .page {
