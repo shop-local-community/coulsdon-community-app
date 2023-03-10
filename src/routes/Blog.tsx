@@ -38,20 +38,20 @@ function Blog() {
                     src={article.attributes.image.data.attributes.url}
                     alt={article.attributes.image.data.attributes.alternativeText}
                   />
-                  <Card.ImgOverlay>
+                  <Card.ImgOverlay className="bg-blur-3">
                     <Card.Title>{article.attributes.title}</Card.Title>
                     <Card.Text>
                       {article.attributes.seo.metaDescription}
                     </Card.Text>
                     <div className="d-flex justify-content-between mt-auto">
                       <LinkContainer to={`/blog/${article.attributes.slug}`}>
-                        <Button
-                          className="stretched-link"
-                          variant="outline-secondary"
-                          size="sm"
-                        >
-                          View
-                        </Button>
+                      <Button
+                        className="stretched-link"
+                        variant="link"
+                        size="sm"
+                      >
+                        Continue reading&hellip;
+                      </Button>
                       </LinkContainer>
                       <small className="text-muted">
                         {publishedAtDate.toLocaleDateString(undefined, {
@@ -68,7 +68,7 @@ function Blog() {
           }
 
           return (
-            <Col key={article.id} xs={12} md={6}>
+            <Col key={article.id} className="d-flex" xs={12} md={6}>
               <Card border="light">
                 <Card.Img
                   variant="top"
@@ -84,10 +84,10 @@ function Blog() {
                     <LinkContainer to={`/blog/${article.attributes.slug}`}>
                       <Button
                         className="stretched-link"
-                        variant="outline-secondary"
+                        variant="link"
                         size="sm"
                       >
-                        View
+                        Continue reading&hellip;
                       </Button>
                     </LinkContainer>
                     <small className="text-muted">
