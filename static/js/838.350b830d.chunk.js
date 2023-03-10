@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoulsdon_community_app=self.webpackChunkcoulsdon_community_app||[]).push([[838],{7623:function(n,u,s){s.r(u);s(2791);var o=s(2592),c=s(2428),t=s(184);u.default=function(){return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("h2",{children:"Logo"}),(0,t.jsx)(o.Z,{src:c.Z,alt:"Coulsdon Community Partnership",fluid:!0})]})}}}]);
+//# sourceMappingURL=838.350b830d.chunk.js.map
