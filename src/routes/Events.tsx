@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { Seo } from "../components";
 import { EventListResponse } from "../schemas";
+import { themeToCssProps } from "../theme";
 
 export type EventsLoaderData = EventListResponse;
 
@@ -40,9 +41,11 @@ function Events() {
           {eventsData.map((event) => {
             const startDate = new Date(event.attributes.start);
 
+            const style = themeToCssProps(event.attributes.theme);
+
             return (
               <Col key={event.id}>
-                <Card className="h-100" border="light">
+                <Card className="h-100" style={style as React.CSSProperties}>
                   <Card.Img
                     variant="top"
                     src={event.attributes.cover.data.attributes.url}
@@ -56,13 +59,13 @@ function Events() {
                       <LinkContainer to={`/events/${event.attributes.slug}`}>
                         <Button
                           className="stretched-link"
-                          variant="outline-secondary"
+                          variant="outline-primary"
                           size="sm"
                         >
                           View
                         </Button>
                       </LinkContainer>
-                      <small className="text-muted">
+                      <small>
                         {startDate.toLocaleDateString(undefined, {
                           day: "numeric",
                           month: "long",
