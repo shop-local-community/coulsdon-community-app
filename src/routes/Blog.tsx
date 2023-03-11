@@ -19,8 +19,14 @@ export async function blogLoader(): Promise<BlogLoaderData> {
   }
 }
 
-function Blog() {
+type BlogProps = {
+  featured?: boolean;
+}
+
+function Blog(props: BlogProps) {
   const { data: blogData } = useLoaderData() as BlogLoaderData;
+
+  const featured = props.featured || true;
 
   return (
     <Container className="page">
@@ -30,7 +36,7 @@ function Blog() {
         {blogData.map((article, index) => {
           const publishedAtDate = new Date(article.attributes.publishedAt);
 
-          if (index === 0) {
+          if (index === (featured ? 0 : -1)) {
             return (
               <Col key={article.id} xs={12}>
                 <Card border="light">
