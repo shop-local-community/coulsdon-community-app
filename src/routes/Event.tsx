@@ -6,6 +6,7 @@ import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { Seo } from "../components";
 import { EventResponse } from "../schemas";
+import { themeToCssProps } from "../theme";
 
 export type EventLoaderData = EventResponse;
 
@@ -33,48 +34,7 @@ function Event() {
   const startDate = new Date(eventData.attributes.start);
   const endDate = new Date(eventData.attributes.end);
 
-  let style: React.CSSProperties = {
-    backgroundColor: "var(--bs-body-bg)",
-    color: "var(--bs-body-color)",
-    fontFamily: "var(--bs-body-font-family)",
-  };
-
-  if (eventData.attributes.theme) {
-    if (eventData.attributes.theme.bodyBg)
-      style = {
-        ...style,
-        "--bs-body-bg": eventData.attributes.theme.bodyBg,
-      } as React.CSSProperties;
-
-    if (eventData.attributes.theme.bodyColor)
-      style = {
-        ...style,
-        "--bs-body-color": eventData.attributes.theme.bodyColor,
-      } as React.CSSProperties;
-
-    if (eventData.attributes.theme.fontFamily) {
-      switch (eventData.attributes.theme.fontFamily) {
-        case "Asul":
-          style = {
-            ...style,
-            "--bs-body-font-family": `'${eventData.attributes.theme.fontFamily}', sans-serif`,
-          } as React.CSSProperties;
-          break;
-        case "Freckle Face":
-        case "Mali":
-          style = {
-            ...style,
-            "--bs-body-font-family": `'${eventData.attributes.theme.fontFamily}', cursive`,
-          } as React.CSSProperties;
-          break;
-        default:
-          style = {
-            ...style,
-            "--bs-body-font-family": `'${eventData.attributes.theme.fontFamily}'`,
-          } as React.CSSProperties;
-      }
-    }
-  }
+  const style = themeToCssProps(eventData.attributes.theme);
 
   return (
     <div className="theme" style={style as React.CSSProperties}>
