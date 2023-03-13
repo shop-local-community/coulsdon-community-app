@@ -1,7 +1,7 @@
 import { Media, RequiredMedia } from "./media";
 import { Seo, Theme } from "./shared";
 
-type Event = {
+export type Event = {
   id: number;
   attributes: {
     title: string;

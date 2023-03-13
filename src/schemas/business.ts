@@ -1,7 +1,7 @@
 import { Media } from "./media";
 import { Seo } from "./shared";
 
-type Business = {
+export type Business = {
   id: number;
   attributes: {
     name: string;

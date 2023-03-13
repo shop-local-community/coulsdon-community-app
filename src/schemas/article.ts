@@ -1,7 +1,7 @@
 import { RequiredMedia } from "./media";
 import { Seo } from "./shared";
 
-type Article = {
+export type Article = {
   id: number;
   attributes: {
     title: string;
