@@ -1,11 +1,9 @@
 import React from "react";
 import { Button, Card, Container, Image } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
 import { LinkContainer } from "react-router-bootstrap";
-import { useLoaderData, useRouteLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { Blog, Seo } from "../components";
-import { AppLoaderData } from "../App";
 import { ArticleListResponse, EventListResponse } from "../schemas";
 import { themeToCssProps } from "../theme";
 
@@ -33,9 +31,6 @@ export async function homeLoader(): Promise<HomeLoaderData> {
 
 function Home() {
   const {
-    preferences: { data: preferencesData },
-  } = useRouteLoaderData("app") as AppLoaderData;
-  const {
     event: { data: eventsData },
     blog: { data: blogData },
   } = useLoaderData() as HomeLoaderData;
@@ -50,6 +45,7 @@ function Home() {
     Event = (
       <Card className="mb-3" style={style as React.CSSProperties}>
         <Card.Body>
+          <Card.Subtitle className="">Our Next Event</Card.Subtitle>
           <Card.Title>
             {eventsData[0].attributes.logo.data ? (
               <Image
