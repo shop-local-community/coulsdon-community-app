@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Ratio, Row } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import { Coordinate, Map, Marker, OverlayLayer } from "@jetblack/map";
 import axios from "axios";
@@ -60,15 +61,28 @@ function Businesses() {
         {businessesData.length ? (
           <Row className="g-3" xs={1} sm={2} md={3}>
             {businessesData.map((business) => (
-              <Col key={business.id}>
-                <Card className="h-100" border="light">
-                  <Card.Img
-                    variant="top"
-                    src={business.attributes.logo.data?.attributes.url}
-                    alt={business.attributes.logo.data?.attributes.alternativeText}
-                  />
+              <Col key={business.id} className="pt-5 mt-5">
+                <Card className="card-profile h-100">
                   <Card.Body>
+                    <Ratio className="card-profile-img border-0 shadow-none" aspectRatio="1x1">
+                      <Image
+                        className="bg-white card-profile-img m-0"
+                        src={business.attributes.logo.data?.attributes.url}
+                        alt={business.attributes.logo.data?.attributes.alternativeText}
+                      />
+                    </Ratio>
                     <Card.Title>{business.attributes.name}</Card.Title>
+                    <div className="d-flex justify-content-between mt-auto">
+                      <LinkContainer to={`/businesses/${business.attributes.slug}`}>
+                        <Button
+                          className="stretched-link"
+                          variant="outline-secondary"
+                          size="sm"
+                        >
+                          View
+                        </Button>
+                      </LinkContainer>
+                    </div>
                   </Card.Body>
                 </Card>
               </Col>
