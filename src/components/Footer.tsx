@@ -4,7 +4,9 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useRouteLoaderData } from "react-router-dom";
 import { AppLoaderData } from "../App";
 import { ReactComponent as FacebookIcon } from "./../icons/facebook.svg";
+import { ReactComponent as InstagramIcon } from "./../icons/instagram.svg";
 import { ReactComponent as TwitterIcon } from "./../icons/twitter.svg";
+import { ReactComponent as YouTubeIcon } from "./../icons/youtube.svg";
 
 function Footer() {
   const {
@@ -42,8 +44,12 @@ function Footer() {
                     switch (socialURL.socialNetwork) {
                       case "Facebook":
                         return <FacebookIcon width="24" />;
+                      case "Instagram":
+                        return <InstagramIcon width="24" />;
                       case "Twitter":
                         return <TwitterIcon width="24" />;
+                      case "YouTube":
+                        return <YouTubeIcon width="24" />;
                     }
                   })()}
                 </div>
