@@ -25,22 +25,21 @@ function Business() {
   const { data: businessData } = useLoaderData() as BusinessLoaderData;
 
   return (
-    <div className="theme">
+    <div className="profile-header bg-primary">
+      <Seo
+        title={businessData.attributes.seo.metaTitle}
+        description={businessData.attributes.seo.metaDescription}
+      />
       <Container className="page">
-        <Seo
-          title={businessData.attributes.seo.metaTitle}
-          description={businessData.attributes.seo.metaDescription}
-        />
-        <h1>
-          {businessData.attributes.logo.data ? (
-            <Image
-              src={businessData.attributes.logo.data.attributes.url}
-              alt={businessData.attributes.logo.data.attributes.alternativeText}
-            />
-          ) : (
-            businessData.attributes.name
-          )}
-        </h1>
+        <div className="container-inner">
+          <Image
+            className="media-object"
+            src={businessData.attributes.logo.data?.attributes.url}
+            alt={businessData.attributes.logo.data?.attributes.alternativeText}
+          />
+          <h1 className="profile-header-user">{businessData.attributes.name}</h1>
+          <p className="profile-header-bio">{businessData.attributes.seo.metaDescription}</p>
+        </div>
       </Container>
     </div>
   );
