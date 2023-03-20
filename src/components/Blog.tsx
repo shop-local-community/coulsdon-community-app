@@ -9,7 +9,6 @@ type BlogProps = {
 }
 
 function Blog(props: BlogProps) {
-  console.log(props);
   const featured = props.featured === undefined ? true : false;
 
   return (
