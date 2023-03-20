@@ -3,10 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useRouteLoaderData } from "react-router-dom";
 import { AppLoaderData } from "../App";
-import { ReactComponent as FacebookIcon } from "./../icons/facebook.svg";
-import { ReactComponent as InstagramIcon } from "./../icons/instagram.svg";
-import { ReactComponent as TwitterIcon } from "./../icons/twitter.svg";
-import { ReactComponent as YouTubeIcon } from "./../icons/youtube.svg";
+import Socials from "./Socials";
 
 function Footer() {
   const {
@@ -32,30 +29,7 @@ function Footer() {
           </Nav.Item>
         </Nav>
         <Nav className="justify-content-center">
-          {preferencesData.attributes.socialURLs.map((socialURL, index) => (
-            <Nav.Item key={index}>
-              <Nav.Link
-                className="link-light"
-                href={socialURL.URL}
-                target="_blank"
-              >
-                <div className="icon">
-                  {(() => {
-                    switch (socialURL.socialNetwork) {
-                      case "Facebook":
-                        return <FacebookIcon width="24" />;
-                      case "Instagram":
-                        return <InstagramIcon width="24" />;
-                      case "Twitter":
-                        return <TwitterIcon width="24" />;
-                      case "YouTube":
-                        return <YouTubeIcon width="24" />;
-                    }
-                  })()}
-                </div>
-              </Nav.Link>
-            </Nav.Item>
-          ))}
+          <Socials socialUrls={preferencesData.attributes.socialURLs} />
         </Nav>
       </Container>
     </Navbar>
