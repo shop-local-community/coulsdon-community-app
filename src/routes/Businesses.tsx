@@ -61,8 +61,9 @@ function Businesses() {
         {businessesData.length ? (
           <Row className="g-3" xs={1} sm={2} md={3}>
             {businessesData.map((business) => (
-              <Col key={business.id} className="pt-5 mt-5">
+              <Col key={business.id}>
                 <Card className="card-profile h-100">
+                  <Card.Header />
                   <Card.Body>
                     <Ratio className="card-profile-img border-0 shadow-none" aspectRatio="1x1">
                       <Image
