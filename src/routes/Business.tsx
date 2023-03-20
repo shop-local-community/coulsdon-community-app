@@ -1,9 +1,8 @@
 import React from "react";
-import { Container, Image } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
+import { Container, Image, Nav } from "react-bootstrap";
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import axios from "axios";
-import { Seo } from "../components";
+import { Seo, Socials } from "../components";
 import { BusinessResponse } from "../schemas";
 
 export type BusinessLoaderData = BusinessResponse;
@@ -39,6 +38,9 @@ function Business() {
           />
           <h1 className="profile-header-user">{businessData.attributes.name}</h1>
           <p className="profile-header-bio">{businessData.attributes.seo.metaDescription}</p>
+          <Nav className="justify-content-center">
+            <Socials socialUrls={businessData.attributes.socialURLs} />
+          </Nav>
         </div>
       </Container>
     </div>
