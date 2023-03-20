@@ -5,19 +5,23 @@ import axios from "axios";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { appLoader } from "./App";
+import { homeLoader } from "./routes/Home";
 import { blogLoader } from "./routes/Blog";
 import { articleLoader } from "./routes/Article";
 import { businessesLoader } from "./routes/Businesses";
+import { businessLoader } from "./routes/Business";
 import { eventsLoader } from "./routes/Events";
 import { eventLoader } from "./routes/Event";
 import { Spinner } from "./components";
 
 const App = React.lazy(() => import("./App"));
 const Error = React.lazy(() => import("./Error"));
-// const Home = React.lazy(() => import("./routes/Home"));
+const Home = React.lazy(() => import("./routes/Home"));
 const Blog = React.lazy(() => import("./routes/Blog"));
 const Article = React.lazy(() => import("./routes/Article"));
 const Businesses = React.lazy(() => import("./routes/Businesses"));
+const Business = React.lazy(() => import("./routes/Business"));
+const Donate = React.lazy(() => import("./routes/Donate"));
 const Events = React.lazy(() => import("./routes/Events"));
 const Event = React.lazy(() => import("./routes/Event"));
 const Guidelines = React.lazy(() => import("./routes/Guidelines"));
@@ -41,6 +45,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <Home />,
+        loader: homeLoader,
+      },
+      {
+        path: "blog",
         element: <Blog />,
         loader: blogLoader,
       },
@@ -53,6 +62,15 @@ const router = createBrowserRouter([
         path: "businesses",
         element: <Businesses />,
         loader: businessesLoader,
+      },
+      {
+        path: "businesses/:slug",
+        element: <Business />,
+        loader: businessLoader,
+      },
+      {
+        path: "donate",
+        element: <Donate />,
       },
       {
         path: "events",
